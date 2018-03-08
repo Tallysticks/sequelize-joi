@@ -36,15 +36,13 @@ module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
         return
       }
 
-      // console.log(`Validation schema on field: ${fieldName}`)
-
       const schema = fieldDefinition['schema']
       const value = instance[fieldName]
 
       const validation = Joi.validate(value, schema, {
         abortEarly: false,
         allowUnknown: false,
-        // noDefaults: true,
+        noDefaults: false,
       })
 
       if (validation.error) {
@@ -81,19 +79,7 @@ function getProperty(source, path) {
     if (path.length === 0) {
       return source[next]
     }
-    throw new Error('shit')
+    throw new Error('Invalid path')
   }
   return getProperty(source[next], path)
-}
-
-const x = {
-  message: 'SampleModel.name cannot be null',
-  type: 'notNull Violation',
-  path: 'name',
-  value: null,
-  origin: 'CORE',
-  instance: {},
-  validatorKey: 'is_null',
-  validatorName: null,
-  validatorArgs: []
 }
