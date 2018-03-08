@@ -35,7 +35,8 @@ module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
 
       const fieldDefinition = instance.rawAttributes[fieldName]
 
-      if (!fieldDefinition['schema']) {
+      // If no such attribute (virtual field), or no schema specified for this attribute
+      if (!fieldDefinition || !fieldDefinition['schema']) {
         return
       }
 
