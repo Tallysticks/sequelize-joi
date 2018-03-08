@@ -42,27 +42,27 @@ const SampleModel = sequelize.define('SampleModel', {
 
 // Validation passes
 await SampleModel
-	.build({
-	  details: {
-	    requiredString: 'One',
-	    optionalString: 'Two',
-	  },
-	})
-	.validate()
-	.then(instance => {
-		// instance contains default values appended by Joi
-	})
+  .build({
+    details: {
+      requiredString: 'One',
+      optionalString: 'Two',
+    },
+  })
+  .validate()
+  .then(instance => {
+    // instance contains default values appended by Joi
+  })
 
 // Validation fails
 await SampleModel
-	.build({
-	  details: {
-	    optionalString: 123,
-	  },
-	})
-	.validate()
-	.catch(error => {
-		// error is a 'SequelizeValidationError'
-		// error.errors is an array of 'SequelizeValidationErrorItem'
-	})
+  .build({
+    details: {
+      optionalString: 123,
+    },
+  })
+  .validate()
+  .catch(error => {
+    // error is a 'SequelizeValidationError'
+    // error.errors is an array of 'SequelizeValidationErrorItem'
+  })
 ```
