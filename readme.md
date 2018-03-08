@@ -1,5 +1,7 @@
 # Sequelize Joi
 
+Allows specifying [Joi](https://github.com/hapijs/joi) validation schema for `JSONB` model attributes in [Sequelize](https://github.com/sequelize/sequelize).
+
 ### Installation
 
 ```
