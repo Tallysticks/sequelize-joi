@@ -4,6 +4,7 @@ const debug = require('debug')('sequelize-joi')
 const DefaultJoi = require('Joi')
 
 module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
+
   if (!sequelize) {
     throw new Error('The required sequelize instance option is missing')
   }
@@ -24,6 +25,8 @@ module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
       return
     }
 
+    debug(`Changed attributes: ${changedKeys}`)
+
     const modelName = instance.constructor.name
 
     const validationErrors = []
@@ -35,6 +38,8 @@ module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
       if (!fieldDefinition['schema']) {
         return
       }
+
+      debug(`Validation schema for attribute: ${fieldName}`)
 
       const schema = fieldDefinition['schema']
       const value = instance[fieldName]
