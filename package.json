@@ -1,6 +1,6 @@
 {
   "name": "sequelize-joi",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Joi schema validation for Sequelize models",
   "homepage": "https://tallysticks.io",
   "bugs": {

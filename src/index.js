@@ -1,7 +1,7 @@
 'use strict'
 
 const debug = require('debug')('sequelize-joi')
-const DefaultJoi = require('Joi')
+const DefaultJoi = require('joi')
 
 module.exports = function (sequelize, { Joi = DefaultJoi } = {}) {
 
