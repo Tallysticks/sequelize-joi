@@ -1,12 +1,17 @@
 {
   "name": "sequelize-joi",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Joi schema validation for Sequelize models",
+  "main": "index.js",
   "homepage": "https://tallysticks.io",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tallysticks/sequelize-joi.git"
+  },
   "bugs": {
     "url": "https://github.com/Tallysticks/sequelize-joi/issues"
   },
-  "license": "MIT",
   "author": {
     "name": "Edward Ruchevits",
     "email": "edward@tallysticks.io"
@@ -15,28 +20,18 @@
     {
       "name": "Edward Ruchevits",
       "email": "edward@tallysticks.io"
+    },
+    {
+      "name": "Mattia Malonni",
+      "email": "mattia.malonni@gmail.com"
     }
   ],
-  "main": "src",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tallysticks/sequelize-joi.git"
-  },
-  "scripts": {
-    "test": "node_modules/.bin/mocha test"
-  },
   "dependencies": {
-    "debug": "^3.1.0",
-    "sequelize": "^4.11.1",
-    "joi": "^13.1.1"
+    "joi": "^17.0.0",
+    "sequelize": "^6.0.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
-    "mocha": "^3.5.3",
+    "mysql2": "^2.3.2",
     "pg": "^7.3.0"
-  },
-  "engines": {
-    "node": "8.x.x"
   }
 }
